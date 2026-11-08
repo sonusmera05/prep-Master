@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrepMaster | NEET & JEE Main Prep Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Prep<span>Master</span></a>
+            <ul class="nav-links">
+                <li><a href="#courses" class="active">Courses</a></li>
+                <li><a href="#test-series">Test Series</a></li>
+                <li><a href="#pyq">PYQs</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="login-btn" onclick="openLoginModal()">Login / Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge">Designed for Class 11th & 12th Aspirants</span>
+            <h1>Ace NEET & JEE Main Preparation</h1>
+            <p>High-quality online test series, previous years' question papers (PYQs), and structured study materials all in one place.</p>
+            <div class="hero-btns">
+                <a href="#test-series" class="btn btn-primary">Take Free Mock Test</a>
+                <a href="#courses" class="btn btn-secondary">Explore Courses</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content: Course & Class Filter -->
+    <section class="main-container" id="courses">
+        <div class="section-header">
+            <h2>Select Your Class</h2>
+            <p>Choose test series and study material tailored to your academic level</p>
+        </div>
+
+        <div class="filter-tabs">
+            <button class="tab-btn active" onclick="filterClass('all', event)">All Tests</button>
+            <button class="tab-btn" onclick="filterClass('11th', event)">Class 11th</button>
+            <button class="tab-btn" onclick="filterClass('12th', event)">Class 12th</button>
+        </div>
+
+        <!-- Test Series Cards Grid -->
+        <div class="card-grid" id="test-series">
+            
+            <!-- Card 1 -->
+            <div class="card 11th" data-exam="neet">
+                <div class="card-tag neet">NEET</div>
+                <h3>Class 11 Physics Mock Test 01</h3>
+                <p>Mechanics, Kinematics & Laws of Motion</p>
+                <div class="card-info">
+                    <span>⏱️ 180 Mins</span>
+                    <span>📝 180 Questions</span>
+                </div>
+                <button class="start-btn" onclick="startTest('Class 11 Physics Mock 01')">Start Test</button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card 12th" data-exam="jee">
+                <div class="card-tag jee">JEE Main</div>
+                <h3>Class 12 Maths Full Syllabus</h3>
+                <p>Calculus, Algebra & 3D Geometry</p>
+                <div class="card-info">
+                    <span>⏱️ 180 Mins</span>
+                    <span>📝 90 Questions</span>
+                </div>
+                <button class="start-btn" onclick="startTest('Class 12 Maths Full Test')">Start Test</button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card 11th" data-exam="neet">
+                <div class="card-tag neet">NEET</div>
+                <h3>Class 11 Chemistry Chapterwise</h3>
+                <p>Organic Chemistry & Atomic Structure</p>
+                <div class="card-info">
+                    <span>⏱️ 60 Mins</span>
+                    <span>📝 45 Questions</span>
+                </div>
+                <button class="start-btn" onclick="startTest('Class 11 Chem Chapterwise')">Start Test</button>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card 12th" data-exam="neet">
+                <div class="card-tag neet">NEET</div>
+                <h3>Class 12 Biology Full Mock</h3>
+                <p>Botany & Zoology Complete Coverage</p>
+                <div class="card-info">
+                    <span>⏱️ 180 Mins</span>
+                    <span>📝 180 Questions</span>
+                </div>
+                <button class="start-btn" onclick="startTest('Class 12 Bio Full Mock')">Start Test</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PYQ Section -->
+    <section class="pyq-section" id="pyq">
+        <div class="section-header">
+            <h2>Previous Year Questions (PYQs)</h2>
+            <p>Download solved papers with detailed step-by-step solutions</p>
+        </div>
+        <div class="pyq-list">
+            <div class="pyq-item">
+                <div>
+                    <h4>NEET 2024 Question Paper with Solutions</h4>
+                    <span>PDF • Physics, Chemistry, Biology</span>
+                </div>
+                <button class="download-btn">Download PDF</button>
+            </div>
+            <div class="pyq-item">
+                <div>
+                    <h4>JEE Main 2024 Session 1 (All Shift Papers)</h4>
+                    <span>PDF • Physics, Chemistry, Mathematics</span>
+                </div>
+                <button class="download-btn">Download PDF</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+            <h3>Student Portal Login</h3>
+            <form onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <label for="email">Email or Roll Number</label>
+                    <input type="text" id="email" required placeholder="Enter your email or roll number">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="submit-btn">Login to Dashboard</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 PrepMaster Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
